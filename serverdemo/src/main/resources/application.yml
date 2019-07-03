@@ -1,0 +1,17 @@
+#服务注册中心端口号
+server:
+  port: 8260
+eureka:
+  instance:
+    #服务注册中心实例的主机名
+    hostname: localhost
+  client:
+    #是否向服务注册中心注册自己
+    register-with-eureka: false
+    #是否检索服务
+    fetch-registry: false
+    healthcheck:
+      enabled: true
+    service-url:
+      #服务注册中心的配置内容，指定服务注册中心的位置
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
